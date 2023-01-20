@@ -14,7 +14,7 @@ from database.users_chats_db import db
 from database.ia_filterdb import Media, get_file_details, get_search_results, get_bad_files
 from database.filters_mdb import del_all, find_filter, get_filters
 from database.gfilters_mdb import find_gfilter, get_gfilters
-from plugins.helper.admin_check import admin_fliter
+#from plugins.helper.admin_check import admin_fliter
 
 
 
@@ -28,30 +28,30 @@ PM_SPELL_CHECK = {}
 FILTER_MODE = {}
 G_MODE = {}
 
-@Client.on_message(filters.command('autofilter') & filters.group & admin_fliter)
-async def fil_mod(client, message): 
-      mode_on = ["yes", "on", "true"]
-      mode_of = ["no", "off", "false"]
+# @Client.on_message(filters.command('autofilter') & filters.group)
+# async def fil_mod(client, message): 
+#       mode_on = ["yes", "on", "true"]
+#       mode_of = ["no", "off", "false"]
 
-      try: 
-         args = message.text.split(None, 1)[1].lower() 
-      except: 
-         return await message.reply("**𝙸𝙽𝙲𝙾𝙼𝙿𝙻𝙴𝚃𝙴 𝙲𝙾𝙼𝙼𝙰𝙽𝙳...**")
+#       try: 
+#          args = message.text.split(None, 1)[1].lower() 
+#       except: 
+#          return await message.reply("**𝙸𝙽𝙲𝙾𝙼𝙿𝙻𝙴𝚃𝙴 𝙲𝙾𝙼𝙼𝙰𝙽𝙳...**")
       
-      m = await message.reply("**𝚂𝙴𝚃𝚃𝙸𝙽𝙶.../**")
+#       m = await message.reply("**𝚂𝙴𝚃𝚃𝙸𝙽𝙶.../**")
 
-      if args in mode_on:
-          FILTER_MODE[str(message.chat.id)] = "True" 
-          await m.edit("**𝙰𝚄𝚃𝙾𝙵𝙸𝙻𝚃𝙴𝚁 𝙴𝙽𝙰𝙱𝙻𝙴𝙳**")
+#       if args in mode_on:
+#           FILTER_MODE[str(message.chat.id)] = "True" 
+#           await m.edit("**𝙰𝚄𝚃𝙾𝙵𝙸𝙻𝚃𝙴𝚁 𝙴𝙽𝙰𝙱𝙻𝙴𝙳**")
       
-      elif args in mode_of:
-          FILTER_MODE[str(message.chat.id)] = "False"
-          await m.edit("**𝙰𝚄𝚃𝙾𝙵𝙸𝙻𝚃𝙴𝚁 𝙳𝙸𝚂𝙰𝙱𝙻𝙴𝙳**")
-      else:
-          await m.edit("𝚄𝚂𝙴 :- /autofilter on 𝙾𝚁 /autofilter off")
+#       elif args in mode_of:
+#           FILTER_MODE[str(message.chat.id)] = "False"
+#           await m.edit("**𝙰𝚄𝚃𝙾𝙵𝙸𝙻𝚃𝙴𝚁 𝙳𝙸𝚂𝙰𝙱𝙻𝙴𝙳**")
+#       else:
+#           await m.edit("𝚄𝚂𝙴 :- /autofilter on 𝙾𝚁 /autofilter off")
 
 
-@Client.on_message(filters.command('g_filter') & filters.group & admin_fliter)
+@Client.on_message(filters.command('g_filter') & filters.chat(ADMINS))
 async def g_fil_mod(client, message): 
       mode_on = ["yes", "on", "true"]
       mode_of = ["no", "off", "false"]
