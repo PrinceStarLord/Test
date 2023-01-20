@@ -19,9 +19,9 @@ def is_enabled(value, default):
 # Bot information
 PORT = environ.get("PORT", "8082")
 SESSION = environ.get('SESSION', 'Media_search')
-API_ID = 4165961
-API_HASH = "38ba6396e513b86e9ed7ea534023a9cc"
-BOT_TOKEN = "5456930478:AAFMu448RjK6N6bMLX3Es3HrJxRulpvudYg"
+API_ID = 
+API_HASH = ""
+BOT_TOKEN = ""
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -30,17 +30,17 @@ PICS = (environ.get('PICS' ,'https://te.legra.ph/file/7b87785a8b6686370f6bf.jpg 
 BOT_START_TIME = time()
 
 # Admins, Channels & Users
-ADMINS = [1132901778]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001282513652 -1001611693204 -1001638006524 -1001612398277 -1001855514451').split()]
+ADMINS = []
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL')
 auth_grp = environ.get('AUTH_GROUP')
-AUTH_CHANNEL = -1001324138225
+AUTH_CHANNEL = 
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://imdb4gb1:imdb4gb1@cluster0.ovlqoai.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_URI = environ.get('DATABASE_URI', "")
 DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
