@@ -18,10 +18,10 @@ def is_enabled(value, default):
 
 # Bot information
 PORT = environ.get("PORT", "8082")
-SESSION = environ.get('SESSION', 'Media_search')
-API_ID = 
-API_HASH = ""
-BOT_TOKEN = ""
+SESSION = environ.get('SESSION', 'LuciferMoringstar_Robot')
+API_ID = 5291894
+API_HASH = 'e15ad5a64cb8bd39b2be463d0314295f'
+BOT_TOKEN = '5911289599:AAHpyEhtJ6kMZ9wOgkJ4XlqojAz5lO_hC1U'
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -30,19 +30,19 @@ PICS = (environ.get('PICS' ,'https://te.legra.ph/file/7b87785a8b6686370f6bf.jpg 
 BOT_START_TIME = time()
 
 # Admins, Channels & Users
-ADMINS = []
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '').split()]
+ADMIN_ID = [1132901778]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001870979107').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL')
 auth_grp = environ.get('AUTH_GROUP')
-AUTH_CHANNEL = 
+AUTH_CHANNEL = -1001870979107
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+DATABASE_URI = 'mongodb+srv://m2links1:m2links1@cluster0.khciwit.mongodb.net/?retryWrites=true&w=majority'
+DATABASE_NAME = 'BOT_NAME'
+COLLECTION_NAME = 'M2links_files'
 
 #maximum search result buttos count in number#
 MAX_RIST_BTNS = int(environ.get('MAX_RIST_BTNS', "10"))
@@ -59,7 +59,7 @@ BUTTON_LOCK = bool(environ.get("BUTTON_LOCK", True))
 # Others
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 IMDB_DELET_TIME = int(environ.get('IMDB_DELET_TIME', "300"))
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', -1001701907795))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', -1001870979107))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'M2LINKSCOMMUNITY')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
